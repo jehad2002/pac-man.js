@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+</head>
+<body>
+    <section id="container">
+        <div id="game-container">
+        </div>
+        <div class="menu">
+            <div class="scoreTime">
+                <span id="audio-controls">
+                    <a id="toggle-sound" onclick="toggleSound()">
+                        <img id="sound-icon" src="/images/unmuted.png" alt="Sound Icon">
+                    </a>
+                    <audio src="" id="game-audio" controls autoplay style="display: none;"></audio>
+                </span>
+                <span class="lives">  
+                    <img id="pacman1" src="images/pacman.png" alt="">
+                    <img id="pacman2" src="images/pacman.png" alt="">
+                    <img id="pacman3" src="images/pacman.png" alt="">
+                </span>
+                <span class="score">SCORE: </span>
+                <span class="time">TIME: </span>
+                <span>jehad developer</span>
+            </div>
+            <div class="command">
+                <span>COMMANDES:</span>
+                <span>R: to restart</span>
+                <span class="pause">Space: to Pause/Continue</span>
+                <span>&#8593;: Move up</span>
+                <span>&#8595;: Move down</span>
+                <span>&#8594;: Move right</span>
+                <span>&#8592;: Move left</span>
+            </div>
+        </div>
+        <div id="death-screen" class="animation-element"></div>
+    </section>
+    <script>
+        var audio = document.getElementById("game-audio");
+        var soundIcon = document.getElementById("sound-icon");
+    
+        function toggleSound() {
+            if (audio.volume === 0) {
+                audio.volume = 1;
+                soundIcon.src = "images/unmuted.png";
+            } else {
+                audio.volume = 0;
+                soundIcon.src = "images/mute.png";
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+    <!-- <script type="module" src="map.js"></script> -->
+</body>
+</html>
